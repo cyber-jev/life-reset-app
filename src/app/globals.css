@@ -1,0 +1,10 @@
+/* src/app/globals.css - add print styles */
+@media print {
+  .print\\:hidden {
+    display: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
