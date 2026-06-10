@@ -1,14 +1,17 @@
-// src/types/index.ts
+export interface ColumnDefinition {
+  id?: string;
+  user_id?: string;
+  column_key: string;
+  display_name: string;
+  column_order: number;
+  is_active: boolean;
+}
+
 export interface TrackerEntry {
   id?: string;
   user_id?: string;
   day: number;
-  coding: boolean;
-  income_work: boolean;
-  social_contact: boolean;
-  left_house: boolean;
-  exercise: boolean;
-  cannabis: boolean;
+  column_values: Record<string, boolean | string>; // boolean for checkboxes, string for text? We'll keep boolean for simplicity
   notes: string;
   created_at?: string;
   updated_at?: string;
@@ -23,9 +26,4 @@ export interface WeeklyReflection {
   change_next_week: string;
   created_at?: string;
   updated_at?: string;
-}
-
-export interface User {
-  id: string;
-  email: string;
 }
