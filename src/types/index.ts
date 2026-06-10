@@ -5,13 +5,15 @@ export interface ColumnDefinition {
   display_name: string;
   column_order: number;
   is_active: boolean;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export interface TrackerEntry {
   id?: string;
   user_id?: string;
   day: number;
-  column_values: Record<string, boolean | string>; // boolean for checkboxes, string for text? We'll keep boolean for simplicity
+  column_values: Record<string, boolean>; // dynamic column values
   notes: string;
   created_at?: string;
   updated_at?: string;
